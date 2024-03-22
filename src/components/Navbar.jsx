@@ -50,14 +50,21 @@ export default function Navbar() {
                     {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
                 </div>
                 <ul className={nav
-                    ? 'fixed left-0 top-0 w-[40%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500'
+                    ? 'fixed left-0 top-0 w-[40%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500 z-50'
                     : 'ease-in-out duration-500 fixed left-[-100%]'
                 }>
-                    <h1 className="w-full text-3xl m-7 font-bold"></h1>
-                    <li className="p-4 border-b cursor-pointer hover:bg-gray-800 font-bold">Sobre mi</li>
-                    <li className="p-4 border-b cursor-pointer hover:bg-gray-800 font-bold">Coreografo</li>
-                    <li className="p-4 border-b cursor-pointer hover:bg-gray-800 font-bold">Bailarina</li>
-                    <li className="p-4 border-b cursor-pointer hover:bg-gray-800 font-bold">Maestra</li>
+                    <h1 className="w-full text-3xl m-7 pt-8 font-bold"></h1>
+                    {links.map((link, index) =>
+                        <a
+                            key={link.id}
+                            href={link.href} >
+                            <li
+                                className={`p-4 border-b cursor-pointer hover:bg-gray-800 font-bold`}
+                                onClick={() => handleClick(index)}>
+                                {link.text}
+                            </li>
+                        </a>
+                    )}
                     <li className="p-4 cursor-pointer hover:bg-gray-800">
                         <FaInstagram size={25} />
                     </li>

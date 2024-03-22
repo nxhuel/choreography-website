@@ -34,7 +34,9 @@ export default function Content() {
                         />
                     </div>
 
-                    <p className=" md:text-2xl text-xl font-bold text-gray-500">Descripcion o frase que desees poner aca.</p>
+                    <p className=" md:text-2xl text-xl font-bold text-slate-400">
+                        Inspirando movimiento y expresión artística.
+                    </p>
 
                     <button className=" bg-[#C6375F] w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-black transition hover:translate-x-1 hover:scale-110 duration-300">
                         Contactame
