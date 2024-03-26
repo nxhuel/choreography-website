@@ -6,15 +6,14 @@ export default function Content() {
 
     const imgInicioStyle = {
         backgroundImage: `url(${imgInicio})`,
-        backgroundSize: 'cover', // Opcional, ajusta el tamaño de la imagen al contenedor
-        backgroundPosition: 'center', // Opcional, centra la imagen en el contenedor
-        width: '100%', // Opcional, ajusta el ancho del div al 100% del contenedor
-        height: '100vh', // Opcional, ajusta la altura del div a 100% de la altura de la ventana
+        backgroundSize: 'cover',
+        backgroundPosition: 'center', 
+        width: '100%', 
+        height: '100vh', 
     };
 
     return (
         <>
-
             <div id="sobremi" style={imgInicioStyle} className="text-white">
                 <div className="max-w-[800px] mt-[-96px] w-full h-screen mx-auto text-center flex flex-col justify-center">
                     <p className=" font-bold p-2"></p>

@@ -28,9 +28,6 @@ export default function Dancer() {
                     </div>
                 </div>
             </div>
-
-
-
         </>
     )
 }
