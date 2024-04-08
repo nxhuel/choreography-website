@@ -13,11 +13,11 @@ export default function Footer() {
                     <h6 className="footer-title">Servicios</h6>
                     <a className="link link-hover">Coreografias</a>
                     <a className="link link-hover">Bailarina</a>
-                    <a className="link link-hover">Maestria</a>
+                    <a className="link link-hover">Maestra</a>
                 </nav>
                 <nav>
                     <h6 className="footer-title">Sedes</h6>
-                    <a className="link link-hover">Sobre nosotrosg</a>
+                    <a className="link link-hover">Sobre mi</a>
                     <a className="link link-hover">Contacto</a>
                 </nav>
                 <nav>

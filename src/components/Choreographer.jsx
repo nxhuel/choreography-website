@@ -29,11 +29,8 @@ export default function Choreographer() {
             <div id='choreographer' className=" text-white bg-black w-full p-7 mx-auto flex justify-center font-bold text-3xl md:text-5xl">COREOGRAFA</div>
             <div className=" max-w-[800px] h-screen mx-auto flex flex-col justify-between p-12 ">
                 <div className="p-1 text-sm md:text-lg  text-center ">
-                    <p>Soy creador de contenidos audiovisuales que pueden expresarse en teatros,
-                        plataformas virtuales, espacio no convencionales.
-                        Siempre de la mano de un proceso de investigación previo, en donde se considera el deseo y
-                        la narración de un mensaje a través de un cuento coreográfico en movimiento.
-                        Tootsie la comedia 2023 teatro Lola Menbrive
+                    <p>
+                        Soy una apasionada coreógrafa con una sólida trayectoria en el mundo de la danza y la creación artística. A lo largo de los años, he tenido el privilegio de trabajar en una amplia variedad de proyectos que han enriquecido mi experiencia y me han permitido crecer como artista.
                     </p>
                 </div>
                 <div className="grid grid-cols-1 gap-4 place-items-center md:grid-cols-2">
@@ -47,21 +44,28 @@ export default function Choreographer() {
                         />
                     ))}
                     {imagenAmpliada && (
-                        <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50 z-50 animate-slideInDown">
-                            <img
-                                className="w-4/5 h-2/5 sm:w-5/6 sm:h-3/6 md:w-3/6 md:h-3/6 cursor-pointer"
-                                src={imagenes[imagenAmpliada]}
-                                alt={imagenAmpliada}
-                                onClick={handleClose}
-                            />
+                        <div>
+                            <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50 z-50 animate-slideInDown">
+                                <img
+                                    className="w-4/5 h-2/5 sm:w-5/6 sm:h-3/6 md:w-3/6 md:h-3/6 cursor-pointer"
+                                    src={imagenes[imagenAmpliada]}
+                                    alt={imagenAmpliada}
+                                    onClick={handleClose}
+                                />
+                            </div>
                         </div>
+
                     )}
                 </div>
 
-                <div className="text-center text-sm md:text-lg ">
+                <div className="text-center text-sm md:text-lg">
                     <p>
-                        Para consultas sobre propuestas coreográficas y/o contenidos
-                        escribir a: <span className=' text-black font-bold'>consultas@nicochavez.com.ar</span>
+                        Para consultas sobre coreografías y/o clases, escribir a: {' '}
+                        <span className="text-black font-bold">
+                            <a href="mailto:antonellatisera97@gmail.com" target="_blank">
+                                antonellatisera97@gmail.com
+                            </a>
+                        </span>
                     </p>
                 </div>
 

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { FaInstagram } from "react-icons/fa";
-import { AiOutlineMenu } from "react-icons/ai";
-import { AiOutlineClose } from "react-icons/ai";
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 
 export default function Navbar() {
     const [nav, setNav] = useState(false);
@@ -11,8 +10,11 @@ export default function Navbar() {
         setNav(!nav);
     }
 
-    const handleClick = (index) => {
-        setTextActive(index)
+    const handleClick = (index, href) => {
+        setTextActive(index);
+        setTimeout(() => {
+            window.location.href = href;
+        }, 1000);
     };
 
     const links = [
@@ -24,26 +26,24 @@ export default function Navbar() {
 
     return (
         <>
-            <div className=' bg-black flex justify-end items-center h-24 max-w-[1240px] mx-auto px-4 text-white'>
+            <div className='bg-black flex justify-end items-center h-24 max-w-[1240px] mx-auto px-4 text-white'>
                 <ul className="hidden md:flex">
-                    {links.map((link, index) =>
-                        <a
-                            key={link.id}
-                            href={link.href} >
+                    {links.map((link, index) => (
+                        <a key={link.id} href={link.href}>
                             <li
                                 className={`p-4 cursor-pointer hover:text-gray-300 font-bold ${textActive === index
                                     ? 'text-black text-2xl'
                                     : ''
                                     }`}
-                                onClick={() => handleClick(index)}>
+                                onClick={() => handleClick(index, link.href)}>
                                 {link.text}
                             </li>
                         </a>
-                    )}
-
-
+                    ))}
                     <li className="p-4 cursor-pointer hover:text-gray-300">
-                        <FaInstagram size={25} />
+                        <a href="https://www.instagram.com/antonellatiseradanza/" target="_blank" rel="noopener noreferrer">
+                            <FaInstagram size={25} />
+                        </a>
                     </li>
                 </ul>
                 <div onClick={handleNav} className="block md:hidden">
@@ -54,22 +54,22 @@ export default function Navbar() {
                     : 'ease-in-out duration-500 fixed left-[-100%]'
                 }>
                     <h1 className="w-full text-3xl m-7 pt-8 font-bold"></h1>
-                    {links.map((link, index) =>
-                        <a
-                            key={link.id}
-                            href={link.href} >
+                    {links.map((link, index) => (
+                        <a key={link.id} href={link.href}>
                             <li
                                 className={`p-4 border-b cursor-pointer hover:bg-gray-800 font-bold`}
-                                onClick={() => handleClick(index)}>
+                                onClick={() => handleClick(index, link.href)}>
                                 {link.text}
                             </li>
                         </a>
-                    )}
-                    <li className="p-4 cursor-pointer hover:bg-gray-800">
-                        <FaInstagram size={25} />
+                    ))}
+                    <li className="p-4 cursor-pointer hover:text-gray-300">
+                        <a href="https://www.instagram.com/antonellatiseradanza/" target="_blank" rel="noopener noreferrer">
+                            <FaInstagram size={25} />
+                        </a>
                     </li>
                 </ul>
-            </div >
+            </div>
         </>
     )
 }

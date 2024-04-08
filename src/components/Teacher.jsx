@@ -1,28 +1,58 @@
-import dancer from '../assets/dancer.jpg'
+import { useState } from "react"
+import { HiChevronRight } from "react-icons/hi";
+import { HiChevronLeft } from "react-icons/hi";
 
+import claseUno from '../assets/claseUno.jpg'
+import claseDos from '../assets/claseDos.jpg'
+import claseTres from '../assets/claseTres.jpg'
+
+const images = {
+    claseUno: claseUno,
+    claseDos: claseDos,
+    claseTres: claseTres
+};
 
 export default function Teacher() {
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [animationDirection, setAnimationDirection] = useState(null);
+
+
+    const nextImage = () => {
+        setAnimationDirection('next');
+        setCurrentImageIndex((prevIndex) =>
+            prevIndex === Object.keys(images).length - 1 ? 0 : prevIndex + 1
+        );
+    };
+
+    const previousImage = () => {
+        setAnimationDirection('prev');
+        setCurrentImageIndex((prevIndex) =>
+            prevIndex === 0 ? Object.keys(images).length - 1 : prevIndex - 1
+        );
+    };
+
+    const handleAnimationEnd = () => {
+        setAnimationDirection(null);
+    };
+
     return (
         <>
-            <div id='bailarina' className=" text-white bg-black w-full p-7 mx-auto flex justify-center font-bold text-3xl md:text-5xl">Maestra</div>
-            <div className="h-screen sm:p-10 md:p-16 lg:p-32 xl:p-40">
+            <div id='maestra' className=" text-white bg-black w-full p-7 mx-auto flex justify-center font-bold text-3xl md:text-5xl">Maestra</div>
+            <div className="h-screen">
                 <div className=" pt-5 pb-5 text-center">
                     <p>Mis clases:</p>
                 </div>
-                <div className="flex flex-col p-5 justify-around">
-                    <div className=" bg-red-800  h-96 ">
-                        <img className='w-full h-full ' src={dancer} alt="/" />
+                <div className="p-12 flex justify-center gap-5 items-center">
+                    <button onClick={previousImage} className="rounded-full bg-gray-200 p-2 w-10 h-10 flex items-center justify-center">
+                        <HiChevronLeft size={20} />
+                    </button>
+                    <div className={`w-[500px] h-[500px] sm:h-[700px] md:h-[700px] lg:h-[700px] ${animationDirection === 'next' ? 'slideInRight' : animationDirection === 'prev' ? 'slideInLeft' : ''}`} onAnimationEnd={handleAnimationEnd}>
+
+                        <img className="w-full h-full object-cover" src={images[Object.keys(images)[currentImageIndex]]} alt={`Image ${currentImageIndex + 1}`} />
                     </div>
-                    <div className=" text-center pt-5 pb-5 bg-[#EFEFEF]">
-                        <h1 className="text-black font-bold">CLASES DE DANZA CLASICA</h1>
-                        <p className="text-[#7E8181]">
-                            Una clase pensada para el entrenamiento físico, técnico y coreográfico donde se transita el lenguaje por medio de secuencias, diagonales, piso, plies y barra.
-                            En este camino, un cuerpo físico y emocional, despierto y presente aprende, reconociendo, atravesando y creyendo en el proceso con la confianza y el amor, abrazando lo desconocido.
-                        </p>
-                    </div>
-                    <div className="flex justify-center text-black font-bold bg-[#EFEFEF] pb-5">
-                        <button className=" border-2 border-black border-solid p-1 rounded-lg active:bg-black active:text-white">Consultar</button>
-                    </div>
+                    <button onClick={nextImage} className="rounded-full bg-gray-200 p-2 w-10 h-10 flex items-center justify-center">
+                        <HiChevronRight size={20} />
+                    </button>
                 </div>
             </div>
         </>

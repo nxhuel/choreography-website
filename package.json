@@ -12,6 +12,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "carrusel": "^1.2.3",
     "chat": "^1.0.8",
     "firebase": "^10.9.0",
     "framer-motion": "^11.0.15",

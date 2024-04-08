@@ -20,3 +20,33 @@ body {
 .animate-slideInDown {
   animation: slideInDown 0.5s ease-in-out;
 }
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(-40%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(40%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slideInRight {
+  animation: slideInRight 0.5s ease;
+}
+
+.slideInLeft {
+  animation: slideInLeft 0.5s ease;
+}

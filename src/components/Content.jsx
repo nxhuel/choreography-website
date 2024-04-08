@@ -1,15 +1,26 @@
 import { ReactTyped } from "react-typed";
-// import ChatScreen from "./ChatScreen";
 import imgInicio from '../assets/img-inicio.jpg';
+import { useState } from "react";
 
 export default function Content() {
+    const [redirecting, setRedirecting] = useState(false);
+
+    const handleClick = (e) => {
+        e.preventDefault();
+        setRedirecting(true);
+        setTimeout(() => {
+            window.open("mailto:antonellatisera97@gmail.com", "_blank"); 
+            setRedirecting(false);
+        }, 1000);
+    };
+
 
     const imgInicioStyle = {
         backgroundImage: `url(${imgInicio})`,
         backgroundSize: 'cover',
-        backgroundPosition: 'center', 
-        width: '100%', 
-        height: '100vh', 
+        backgroundPosition: 'center',
+        width: '100%',
+        height: '100vh',
     };
 
     return (
@@ -37,9 +48,12 @@ export default function Content() {
                         Inspirando movimiento y expresión artística.
                     </p>
 
-                    <button className=" bg-[#C6375F] w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-black transition hover:translate-x-1 hover:scale-110 duration-300">
-                        Contactame
-                    </button>
+                    <a
+                        href="mailto:antonellatisera97@gmail.com"
+                        onClick={handleClick}
+                        className="bg-[#C6375F] w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-black transition hover:translate-x-1 hover:scale-110 duration-300">
+                        {redirecting ? "Redirigiendo a Gmail..." : "Contactame"}
+                    </a>
                 </div>
             </div>
         </>
