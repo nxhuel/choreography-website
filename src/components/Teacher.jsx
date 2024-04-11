@@ -37,7 +37,7 @@ export default function Teacher() {
 
     return (
         <>
-            <div id='maestra' className=" text-white bg-black w-full p-7 mx-auto flex justify-center font-bold text-3xl md:text-5xl">Maestra</div>
+            <div id='maestra' className=" text-white bg-[#C6375F] w-full p-7 mx-auto flex justify-center font-bold text-3xl md:text-5xl font-sanchez">Maestra</div>
             <div className="h-screen">
                 <div className=" pt-5 pb-5 text-center">
                     <p>Mis clases:</p>

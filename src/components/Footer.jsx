@@ -1,5 +1,10 @@
 import { GiZigzagTune } from "react-icons/gi";
+import { HiArrowUp } from "react-icons/hi";
+import { animateScroll as scroll } from 'react-scroll';
 
+const handleScrollToTop = () => {
+    scroll.scrollToTop();
+};
 
 export default function Footer() {
     return (
@@ -8,6 +13,9 @@ export default function Footer() {
                 <aside>
                     <GiZigzagTune size={40} />
                     <p>Antonella Tisera<br />Page created 2024</p>
+                    <li className="cursor-pointer hover:text-gray-300" onClick={handleScrollToTop}>
+                        <HiArrowUp size={25} />
+                    </li>
                 </aside>
                 <nav>
                     <h6 className="footer-title">Servicios</h6>

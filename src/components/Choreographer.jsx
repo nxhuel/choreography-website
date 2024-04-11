@@ -26,9 +26,10 @@ export default function Choreographer() {
 
     return (
         <>
-            <div id='choreographer' className=" text-white bg-black w-full p-7 mx-auto flex justify-center font-bold text-3xl md:text-5xl">COREOGRAFA</div>
+        
+            <div id='choreographer' className=" text-white bg-[#C6375F] w-full p-7 mx-auto flex justify-center font-bold text-3xl md:text-5xl font-sanchez">COREOGRAFA</div>
             <div className=" max-w-[800px] h-screen mx-auto flex flex-col justify-between p-12 ">
-                <div className="p-1 text-sm md:text-lg  text-center ">
+                <div className=" text-black p-1 text-sm md:text-lg  text-center ">
                     <p>
                         Soy una apasionada coreógrafa con una sólida trayectoria en el mundo de la danza y la creación artística. A lo largo de los años, he tenido el privilegio de trabajar en una amplia variedad de proyectos que han enriquecido mi experiencia y me han permitido crecer como artista.
                     </p>

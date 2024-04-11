@@ -14,7 +14,7 @@ export default function Dancer() {
 
     return (
         <>
-            <div id='bailarina' className=" text-white bg-black w-full p-7 mx-auto flex justify-center font-bold text-3xl md:text-5xl">BAILARINA</div>
+            <div id='bailarina' className=" text-white bg-[#C6375F] w-full p-7 mx-auto flex justify-center font-bold text-3xl md:text-5xl font-sanchez">BAILARINA</div>
             <div style={imgFondoStyle} className="h-screen relative">
                 <div className='bg-white bg-opacity-75 absolute inset-0'>
                     <div className="max-w-[800px] h-full mx-auto flex flex-col gap-32 sm:gap-10 md:gap-8 p-12 ">
